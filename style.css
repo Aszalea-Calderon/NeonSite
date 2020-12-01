@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&display=swap');
+/* font-family: 'Advent Pro', sans-serif;-- body */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+ html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+ article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+} 
+
+ *{
+  /* border:1px solid tomato; */
+  max-width:100%; 
+}  
+body{
+  font-family: 'Advent Pro', sans-serif;
+  /* height: 100%; */
+  background-color: black;
+}
+.bg{
+  background-image: url("/Projects/neon/images/back.jpg");
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+.container{
+  /* width:100%; */
+  /* min-height: 100vh; */
+  height: 800px;
+  
+  /* background:radial-gradient(gray, black); */
+  color:#fff;
+  position: relative;
+}
+.logo{
+  margin-left:7%;
+  padding-top:5%;
+  height:50px;
+}
+
+.content{
+  font-size: 1vw;
+  max-width: 40%;
+  margin-left:15%;
+  margin-top:10%;
+  position: relative;
+}
+
+.content h1{
+  font-size:3vw;
+  margin:10px 0;
+  font-weight: 100;
+}
+
+.content h2{/*this created th interesting opacity*/
+  font-size:5vw;
+  margin:10px 0;
+  opacity:0.6;
+}
+.content p{
+  font-size:1vw;
+  margin:18px 0;
+  color: #ccc;
+  line-height: 18px;
+}
+
+.link{
+  color:#fff;
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px 0;
+  position: relative;
+}
+
+
+.link::after{/*this is the line after discover*/
+  content: '';
+  background:#fff;
+  height: 1px;
+  width: 60px;
+  position: absolute;
+  top: 50%;
+  left: 110%;
+  transform: translateY(-50%);/*this sets up the line*/
+  transition: 0.5s;/*this is the transition of the hover*/
+}
+
+.link:hover::after{
+ width:100px;/*this is the post hover length*/
+}
+span{/*this sets up the side line*/
+  position:absolute;
+  left:-150px;
+  top:200px;
+  transform: rotate(-90deg);
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+span:after{/*this is the line after discover*/
+    content: '';
+    background:#fff;
+    height: 1px;
+    width: 60px;
+    position: absolute;
+    top: 50%;
+    left: 110%;
+    transform: translateY(-50%);
+  }
+  
+
+  
+  .search-img{
+    position: absolute;
+    left: 9%;
+    bottom: 8%;
+    width: 21px;
+    opacity: 0.5;
+  }
+
+  /*Gallery*/
+  .main{
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+  .main h1{/*this may be where I need to change fonts*/
+    font-family: 'Advent Pro', sans-serif;
+    position: relative;
+    height: auto;
+    width: 100%;
+    width: 100%;
+    /* margin:5% 0 2% 0 ; */
+    text-align: center;
+    /* font-size:2.8em;
+    font-weight: 650; */
+    letter-spacing: 1.5px;
+    color:white;
+    font-size:5vw;
+    margin:10px 0;
+    opacity:0.6;
+    letter-spacing: 2px;
+    padding:0;
+  
+  }
+  h1:hover{
+    color:lightblue;
+   
+  }
+  .main .gallery{/*this helped with the original spacing*/
+    position: relative;
+    height: auto;
+    width: 90%;
+    margin:auto;
+    padding:45px 0;
+    display: grid;
+    grid-template-columns: auto auto auto auto;/*this sets up the rows, if we wanted less, remove an auto*/
+    grid-gap:2vh;/*this is the gaps between the rows*/
+    grid-auto-flow:dense;/*this puts them next to each other, they are a set size however*/
+  }
+
+  .main .gallery .img{/*this also helped with the original spacing*/
+    position: relative;
+    height:100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .main .gallery .img:first-child{/*this staggers the first image*/
+    grid-column-start:span 2;
+    grid-row-start:span 3;
+  }
+  
+  .main .gallery .img:nth-child(2n+3){
+    grid-column-start:span 2;
+  }
+
+  .main .gallery .img:nth-child(4n+5){
+    grid-column-start:span 2;
+    grid-row-start:span 2;
+  }
+
+  .main .gallery .img:nth-child(6n+7){
+    grid-row-start:span 1;
+  }
+
+  
+  .main .gallery .img:nth-child(8n+9){
+    grid-column-start:span 1;
+    grid-row-start:span 1;
+  }
+
+  .main .gallery .img img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+  } 
+
+  .a{
+    color:#fff;
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  /*media queries*/
+@media(max-width:1024px){
+  
+  .bg{
+    background-position:right;
+  }
+
+  .content{
+    font-size: 2vw;
+  }
+
+  .content h1{
+    font-size:5vw;
+  }
+
+  .content h2{
+    font-size:7vw;
+  }
+  .content p{
+    font-size:2vw;
+  }
+}
+/*end 1024*/
+/*start 768*/
+@media(max-width:768px){
+  .content{
+    max-width: 40%;
+    margin-left:10%;
+    margin-top:20%;
+  }
+
+  span{
+    margin-top: -80px;
+      left:-100px;
+    }
+
+    /*gallery*/
+    .main .gallery{
+      display:grid;
+      grid-template-columns:auto auto auto auto ;
+    }
+  }
+
+/*end 768*/
+/*start 540*/
+@media(max-width:540px){
+  .content{
+    max-width: 40%;
+    margin-left:40%;
+    margin-top:-8%;
+  }
+  a{
+    position:absolute;
+    left:-120px;
+    top:-10px;
+    transform: rotate(-90deg);
+  }
+}
+/*end 540*/
+/*start 415*/
+
+@media(max-width:415px){
+  
+  .content{
+    font-size: 2vw;
+  }
+
+  .content h1{
+    font-size:5vw;
+  }
+
+  .content h2{
+    font-size:7vw;
+  }
+  .content p{
+    font-size:3vw;
+  }
+  
+}
+/* 
+/*end 415*/
+/*start 4*/
+/* 
+411- pixel 2
+375 -iphone 6-7-8
+360 -moto
+320 - iphone 5 */
